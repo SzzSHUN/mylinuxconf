@@ -8,7 +8,8 @@ if [ -x /bin/pacman ] || [ -x /usr/bin/pacman ]; then
 	#VIM Airline & Airline themes
 	sudo pacman -S --needed vim-airline vim-airline-themes
 elif [ -x /bin/apt ] || [ -x /usr/bin/apt ]; then
-	sudo apt install ttf-ibm-plex
+	#Debian not have this package. :-(
+	#sudo apt install ttf-ibm-plex
 	sudo apt install vim-airline vim-airline-themes
 fi
 
