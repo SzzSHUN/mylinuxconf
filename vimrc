@@ -10,7 +10,7 @@ set hlsearch
 set cursorline
 hi CursorLine cterm=NONE ctermbg=darkblue ctermfg=white
 set foldenable
-set foldlevelstart=8
+set foldlevelstart=10
 set foldmethod=marker
 set noexpandtab
 set tabstop=4
@@ -29,7 +29,7 @@ set nolist
 set listchars=eol:¬,tab:↹·,trail:⏼,extends:⍈,precedes:⍇,space:␣
 
 " _SH szövegből #!/bin/bash -t csinál
-abbr _SH #!/usr/bin/env sh
+abbr _SH #!/bin/bash
 "CTRL+n -> set relative line numbers on/off
 nmap <C-n> :set invrelativenumber<CR>
 "CTRL-l (L) ->set list on/off
