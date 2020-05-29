@@ -3,14 +3,12 @@
 dtstr="$(date +'%Y%m%d%H%M%S')"
 
 if [ -x /bin/pacman ] || [ -x /usr/bin/pacman ]; then
-	#Optional True Type Font for terminal window
-	sudo pacman -S --needed ttf-ibm-plex
+	#Font for terminal window
+	sudo pacman -S --needed awesome-terminal-fonts
 	#VIM Airline & Airline themes
-	sudo pacman -S --needed vim-airline vim-airline-themes
-elif [ -x /bin/apt ] || [ -x /usr/bin/apt ]; then
-	#Debian not have this package. :-(
-	#sudo apt install ttf-ibm-plex
-	sudo apt install vim-airline vim-airline-themes
+	sudo pacman -S --needed vim vim-airline vim-airline-themes
+	#mc & Double Commander-GTK
+	sudo pacman mc doublecmd-gtk2
 fi
 
 if [ -d "$HOME/.config/mc" ]; then
@@ -18,7 +16,11 @@ if [ -d "$HOME/.config/mc" ]; then
 fi
 cp -rv ./mc "$HOME/.config/"
 
+
+if [ ! -d $HOME/.vim ]; then mkdir $HOME/.vim; fi
 if [ -f "$HOME/.vimrc" ]; then
-	mv -v "$HOME/.vimrc" "$HOME/.vimrc.$dtstr"
+	mv -v "$HOME/.vimrc" "$HOME/.vim/vimrc.$dtstr"
+elif [ -f "$HOME/.vim/vimrc" ]; then
+	mv -v "$HOME/.vim/vimrc" "$HOME/.vim/vimrc.$dtstr"
 fi
-cp -v ./vimrc "$HOME/.vimrc"
+cp -v ./vimrc "$HOME/.vim/vimrc"

@@ -1,7 +1,6 @@
 "Modified: Wed 12 Feb 2020 02:13:31 PM CET
 set number
 syntax on
-filetype plugin indent on
 set wildmenu
 set wildmode=list:longest
 set lazyredraw
